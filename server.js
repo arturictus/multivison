@@ -26,6 +26,10 @@ app.use(stylus.middleware(
 ));
 app.use(express.static(__dirname + '/public'));
 
+// partials routes
+app.get('/partials/:partialPath', function(req, res){
+  res.render('partials/' + req.params.partialPath);
+});
 // wildcard route
 app.get('*', function(req, res){
   res.render('index');
