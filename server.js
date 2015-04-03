@@ -38,22 +38,13 @@ db.once('open', function callback(){
   console.log('multivision db opened');
 });
 
-// var messageSchema = mongoose.schema();
-var Message = mongoose.model('Message', { message: String });
-var mongoMessage;
-Message.findOne().exec(function(err, messageDoc){
-  mongoMessage = messageDoc.message;
-});
-
 // partials routes
 app.get('/partials/:partialPath', function(req, res){
   res.render('partials/' + req.params.partialPath);
 });
 // wildcard route
 app.get('*', function(req, res){
-  res.render('index', {
-    mongoMessage: mongoMessage
-  });
+  res.render('index');
 });
 
 // server

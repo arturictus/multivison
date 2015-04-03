@@ -1,2 +1,10 @@
-h1 This is a partial
-h2 {{ myVar }}
+.container
+  .jumbotron
+    h1 Multivison
+    p Aute in voluptate consequat dolor reprehenderit do mollit incididunt qui occaecat consectetur commodo consectetur. Quis nisi ea aliquip elit dolore excepteur magna. Sunt nostrud quis nostrud labore laborum occaecat. Voluptate ex qui id aliqua aliquip nisi ipsum commodo. Enim magna laborum anim excepteur id laborum. Ea aliquip do reprehenderit et id incididunt et eiusmod consequat occaecat aliquip occaecat.
+
+  .row
+    .col-md-6
+      div(ng-include="'/partials/featured-courses'")
+    .col-md-6
+      div(ng-include="'/partials/new-courses'")

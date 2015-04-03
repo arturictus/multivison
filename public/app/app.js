@@ -4,10 +4,6 @@ angular.module('app').config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider){
     $locationProvider.html5Mode(true);
     $routeProvider
-      .when('/', { templateUrl: '/partials/main', controller: 'mainCtrl' });
+      .when('/', { templateUrl: '/partials/main', controller: 'mvMainCtrl' });
   }
 ]);
-
-angular.module('app').controller('mainCtrl', ['$scope', function($scope){
-  $scope.myVar = 'Hello Angular';
-}]);
