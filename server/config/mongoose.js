@@ -20,8 +20,12 @@ module.exports = function(config){
   userSchema.methods = {
     authenticate: function(password){
       return hashPwd(this.salt, password) == this.hashed_password;
+    },
+    fullName: function(){
+      return this.firstName+ ' ' + this.lastName;
     }
   };
+
   var User = mongoose.model('User', userSchema);
 
   User.find({}).exec(function(err, collection){
