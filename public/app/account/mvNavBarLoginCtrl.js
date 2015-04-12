@@ -11,6 +11,7 @@ angular.module('app').controller('mvNavBarLoginCtrl',
         }
       });
     };
+
     $scope.signout = function(){
       mvAuth.logoutUser().then(function(success){
         $scope.username = '';
