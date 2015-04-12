@@ -1,10 +1,10 @@
 var express = require('express'),
-  stylus = require('stylus'),
-  logger = require('morgan'),
-  bodyParser = require('body-parser'),
-  cookieParser = require('cookie-parser'),
-  session = require('express-session'),
-  passport = require('passport');
+    stylus = require('stylus'),
+    logger = require('morgan'),
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    passport = require('passport');
 
 module.exports = function(app, config) {
   // stylus compile

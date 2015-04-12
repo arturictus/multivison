@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-  crypto = require('crypto');
+    crypto = require('crypto');
 
 module.exports = function(config){
   mongoose.connect(config.db);
