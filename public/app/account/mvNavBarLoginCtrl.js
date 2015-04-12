@@ -1,17 +1,13 @@
-angular.module('app').controller('mvNavBarLoginCtrl',[ '$scope', '$http', 'mvIdentify', 'mvNotifier',
-  function($scope, $http, mvIdentify, mvNotifier){
+angular.module('app').controller('mvNavBarLoginCtrl',[ '$scope', '$http', 'mvIdentify', 'mvNotifier', 'mvAuth',
+  function($scope, $http, mvIdentify, mvNotifier, mvAuth){
+  $scope.identity = mvIdentify;
   $scope.signin = function(username, password){
-    $http.post('/login', {username: username, password: password }).then(function(response){
-      if (response.data.success){
-        mvIdentify.currentUser = response.data.user;
+    mvAuth.authenticateUser(username, password).then(function(success){
+      if (success){
         mvNotifier.notify('You have succesfully signed in!');
-        console.log('logged in!');
       } else {
-        mvNotifier.notify('username/password conbination incorrect');
-        console.log('failed to log in!');
+        mvNotifier.error('username/password conbination incorrect');
       }
     });
-    console.log(username);
-    console.log(password);
   };
 }]);

@@ -4,5 +4,5 @@ angular.module('app').factory('mvIdentify', function(){
     isAuthenticated: function(){
         return !!this.currentUser;
     }
-  }
+  };
 });
