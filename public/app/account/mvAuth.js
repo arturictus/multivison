@@ -1,4 +1,4 @@
-angular.module('app').factory('mvAuth', [ '$http', 'mvIdentify', '$q', 'mvUser', function($http, mvIdentify, $q, mvUser){
+angular.module('app').factory('mvAuth', [ '$http', 'mvIdentity', '$q', 'mvUser', function($http, mvIdentity, $q, mvUser){
   return {
     authenticateUser: function(username, password){
       var dfd = $q.defer();
@@ -6,7 +6,7 @@ angular.module('app').factory('mvAuth', [ '$http', 'mvIdentify', '$q', 'mvUser',
         if (response.data.success){
           var user = new mvUser();
           angular.extend(user, response.data.user);
-          mvIdentify.currentUser = user;
+          mvIdentity.currentUser = user;
           dfd.resolve(true);
         } else {
           dfd.resolve(false);
@@ -18,10 +18,17 @@ angular.module('app').factory('mvAuth', [ '$http', 'mvIdentify', '$q', 'mvUser',
     logoutUser: function(){
       var dfd = $q.defer();
       $http.post('/logout', {logout: true}).then(function(){
-        mvIdentify.currentUser = undefined;
+        mvIdentity.currentUser = undefined;
         dfd.resolve();
       });
       return dfd.promise;
+    },
+    authorizeCurrentUserForRoute: function(role){
+      if (mvIdentity.isAuthorized(role) ){
+        return true;
+      } else {
+        return $q.reject('not authorized');
+      }
     }
   };
 }]);

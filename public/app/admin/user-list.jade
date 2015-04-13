@@ -1,0 +1,8 @@
+.contanier
+  table.table
+    tr
+      th Fullname
+      th Username
+    tr(ng-repeat="user in users")
+      td {{user.firstName + ' ' + user.lastName}}
+      td {{user.userName}}
