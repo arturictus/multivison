@@ -1,5 +1,5 @@
-angular.module('app').controller('mvSignupCtrl',[ '$scope', 'mvAuth', 'mvNotifier', '$location',
-  function($scope, mvAuth, mvNotifier, $location){
+angular.module('app').controller('mvSignupCtrl',[ '$scope', 'mvAuth', 'mvNotifier', '$location', 'mvUser',
+  function($scope, mvAuth, mvNotifier, $location, mvUser){
     $scope.signup = function(){
       var newUserData = {
         username: $scope.email,

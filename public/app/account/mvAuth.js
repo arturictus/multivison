@@ -18,7 +18,7 @@ angular.module('app').factory('mvAuth', [ '$http', 'mvIdentity', '$q', 'mvUser',
     createUser: function(newUserData){
       var newUser = new mvUser(newUserData);
       var dfd = $q.defer();
-      newUser.save().then(function(){
+      newUser.$save().then(function(){
         mvIdentity.currentUser = newUser;
         dfd.resolve();
       }, function(response){
