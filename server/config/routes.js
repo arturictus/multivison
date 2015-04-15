@@ -1,14 +1,12 @@
 var auth = require('./auth'),
     mongoose = require('mongoose'),
-    User = mongoose.model('User');
+    User = mongoose.model('User'),
+    users = require('../controllers/users');
 
 module.exports = function(app){
-
-  app.get('/api/users', auth.requiresApiLogin, function(req, res){
-    User.find({}).exec(function(err, collection){
-      res.send(collection);
-    });
-  });
+  //  Users resource
+  app.get('/api/users', auth.requiresApiLogin, users.getUsers);
+  app.post('/api/users', users.createUser);
   // partials routes
   app.get('/partials/*', function(req, res){
     res.render('../../public/app/' + req.params[0]);
