@@ -7,6 +7,7 @@ module.exports = function(app){
   //  Users resource
   app.get('/api/users', auth.requiresApiLogin, users.getUsers);
   app.post('/api/users', users.createUser);
+  app.put('/api/users', users.updateUser);
   // partials routes
   app.get('/partials/*', function(req, res){
     res.render('../../public/app/' + req.params[0]);

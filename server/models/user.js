@@ -19,6 +19,9 @@ userSchema.methods = {
   },
   fullName: function(){
     return this.firstName+ ' ' + this.lastName;
+  },
+  hasRole: function(role){
+    return this.roles.indexOf(role) > -1;
   }
 };
 
