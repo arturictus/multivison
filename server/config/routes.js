@@ -19,6 +19,10 @@ module.exports = function(app){
     res.end();
   });
 
+  app.all('/api/*', function(req, res){
+    res.send(404);
+  });
+
   // wildcard route
   // carefull to keep this wildcard at the end of the function.
   // if not it will execute before the specified resources
