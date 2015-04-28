@@ -1,13 +1,18 @@
 var auth = require('./auth'),
     mongoose = require('mongoose'),
     User = mongoose.model('User'),
-    users = require('../controllers/users');
+    users = require('../controllers/users'),
+    courses = require('../controllers/courses');
 
 module.exports = function(app){
   //  Users resource
   app.get('/api/users', auth.requiresApiLogin, users.getUsers);
   app.post('/api/users', users.createUser);
   app.put('/api/users', users.updateUser);
+
+  // courses
+  app.get('/api/courses', courses.getCourses);
+
   // partials routes
   app.get('/partials/*', function(req, res){
     res.render('../../public/app/' + req.params[0]);
