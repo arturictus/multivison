@@ -12,6 +12,7 @@ module.exports = function(app){
 
   // courses
   app.get('/api/courses', courses.getCourses);
+  app.get('/api/courses/:id', courses.getCourseById);
 
   // partials routes
   app.get('/partials/*', function(req, res){
