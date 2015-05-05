@@ -1,30 +1,3 @@
-angular.module('app').controller('mvMainCtrl', ['$scope', function($scope){
-  $scope.courses =  [
-    {"name": "Kevyn Murphy", "featured": true, "published": Date.parse("December 1 2015")},
-    {"name": "Gay J. Powell", "featured": false, "published": Date.parse("December 3 2015")},
-    {"name": "Shelly Benson", "featured": true, "published": Date.parse("April 11 2015")},
-    {"name": "Cheryl Larsen", "featured": false, "published": Date.parse("December 26 2014")},
-    {"name": "Sydney C. Gillespie", "featured": true, "published": Date.parse("March 4 2016")},
-    {"name": "David P. Christensen", "featured": true, "published": Date.parse("August 6 2014")},
-    {"name": "Laith Hall", "featured": true, "published": Date.parse("September 2 2015")},
-    {"name": "Colorado Bowen", "featured": true, "published": Date.parse("January 3 2016")},
-    {"name": "Jeremy R. Johnson", "featured": false, "published": Date.parse("May 11 2014")},
-    {"name": "Kirby Cortez", "featured": true, "published": Date.parse("February 14 2015")},
-    {"name": "Paul F. Ortega", "featured": false, "published": Date.parse("December 7 2015")},
-    {"name": "Kaden Strickland", "featured": true, "published": Date.parse("September 16 2015")},
-    {"name": "Ignatius A. Bishop", "featured": false, "published": Date.parse("November 16 2014")},
-    {"name": "Colorado Bowen", "featured": false, "published": Date.parse("January 3 2016")},
-    {"name": "Jeremy R. Johnson", "featured": false, "published": Date.parse("May 11 2014")},
-    {"name": "Kirby Cortez", "featured": false, "published": Date.parse("February 14 2015")},
-    {"name": "Paul F. Ortega", "featured": false, "published": Date.parse("December 7 2015")},
-    {"name": "Kaden Strickland", "featured": false, "published": Date.parse("September 16 2015")},
-    {"name": "Ignatius A. Bishop", "featured": false, "published": Date.parse("November 16 2014")},
-    {"name": "Ignatius A. Bishop", "featured": false, "published": Date.parse("November 16 2014")},
-    {"name": "Colorado Bowen", "featured": false, "published": Date.parse("January 3 2016")},
-    {"name": "Jeremy R. Johnson", "featured": false, "published": Date.parse("May 11 2014")},
-    {"name": "Kirby Cortez", "featured": false, "published": Date.parse("February 14 2015")},
-    {"name": "Paul F. Ortega", "featured": false, "published": Date.parse("December 7 2015")},
-    {"name": "Kaden Strickland", "featured": false, "published": Date.parse("September 16 2015")},
-    {"name": "Ignatius A. Bishop", "featured": false, "published": Date.parse("November 16 2014")}
-  ];
+angular.module('app').controller('mvMainCtrl', ['$scope', 'mvCourse', 'mvCachedCourses', function($scope, mvCachedCourses){
+  $scope.courses =  mvCachedCourses.query();
 }]);

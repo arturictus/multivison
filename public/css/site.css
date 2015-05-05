@@ -24,3 +24,9 @@ footer p {
 .toast-top-right {
   top: 70px;
 }
+.top-padding-med {
+  padding-top: 10px;
+}
+.margin-med-left {
+  margin-left: 10px;
+}
