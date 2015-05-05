@@ -4,9 +4,8 @@ angular.module('app').factory('mvCachedCourses', ['mvCourse', function(mvCourse)
       query: function(){
         if(!courseList){
           courseList = mvCourse.query();
-        } else {
-          return courseList;
         }
+        return courseList;
       }
     };
 }]);
