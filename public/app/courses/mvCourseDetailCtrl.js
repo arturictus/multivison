@@ -1,5 +1,5 @@
-angular.module('app').controller('mvCourseDetailCtrl', ['$scope', 'mvCourse', '$routeParams',
-  function($scope, mvCourse, $routeParams){
-    $scope.course = mvCourse.get({id: $routeParams.id});
+angular.module('app').controller('mvCourseDetailCtrl', ['$scope', 'mvCachedCourses', '$routeParams',
+  function($scope, mvCachedCourses, $routeParams){
+    $scope.course = mvCachedCourses.get({id: $routeParams.id});
   }
 ]);

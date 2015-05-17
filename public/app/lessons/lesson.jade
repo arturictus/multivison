@@ -1,0 +1,13 @@
+#alphaTab(data-file='uploads/Nightwish.gp5', data-tracks='3')
+  #controls
+    #loadingInfo Player not ready
+    #sfInfo
+      Loading Soundfont
+      span.progress
+    button#playPause.button.play(disabled='disabled') Play
+    button#stop.button(disabled='disabled') Stop
+    #layoutButtons.button-group
+      button#page.button.active(disabled='disabled', data-layout='page', data-scrollmode='vertical') Page
+      button#horizontalBarwise.button(disabled='disabled', data-layout='horizontal', data-scrollmode='horizontal-bar') Horizontal (Barwise)
+      button#horizontalOffscreen.button(disabled='disabled', data-layout='horizontal', data-scrollmode='horizontal-offscreen') Horizontal (Offscreen)
+script(type='text/javascript', src='/app/lessons/jqueryPlayer.js')
