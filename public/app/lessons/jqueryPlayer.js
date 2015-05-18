@@ -9,8 +9,8 @@ at.alphaTab();
 //
 // 2. Initialize Player and Setup Player UI
 var as = at.alphaTab('playerInit', {
-    asRoot: '/Samples/JavaScript/lib/alphaSynth/',
-    swfObjectRoot: '/Samples/JavaScript/lib/alphaSynth/'
+    asRoot: '/lib/alphaSynth/',
+    swfObjectRoot: '/lib/alphaSynth/'
 }); // init alphaSynth
 
 as.On('ready', function(r) {
